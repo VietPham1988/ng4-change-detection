@@ -57,4 +57,18 @@ export class TodoComponent implements OnInit
     console.log(`--Todo ${this.todo.id} ngAfterViewChecked`);
   }
 
+  mutateItem() {
+    const randomStr = `${(new Date()).getMilliseconds()}`;
+    this.todo.text = `${this.todo.text} - ${randomStr}`;
+  }
+
+  immutateItem() {
+    const randomStr = `${(new Date()).getMilliseconds()}`;
+    this.todo = new ToDo(
+      this.todo.id,
+      `${this.todo.text} - ${randomStr}`,
+      !this.todo.checked
+    );
+  }
+
 }

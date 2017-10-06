@@ -34,7 +34,8 @@ App ngAfterContentChecked
 		Todo 888 ngAfterContentChecked
 		Todo 888 ngAfterViewChecked
 		// Loop End from 1 to 2 in Filter Comp 
-		
+				
+		Todo constructor // of Changed Todo Comp
 		// Loop Start from 1 to 2 in ToDos Comp 
 		Todo 1 DoCheck
 		Todo 1 ngAfterContentChecked
@@ -42,8 +43,7 @@ App ngAfterContentChecked
 		// Loop Start from 1 to 2 in ToDos Comp
 		
 		// Changed Todo Comp In ToDos Comp
-		// Start
-		Todo constructor		
+		// Start		
 		Todo 3 OnChanges
 		Todo 3 ngOnInit
 		Todo 3 DoCheck
