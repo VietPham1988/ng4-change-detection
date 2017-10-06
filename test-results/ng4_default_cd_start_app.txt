@@ -1,0 +1,70 @@
+// Start App, Default Change Detection
+
+App constructor
+	Filter List constructor
+	Todo List constructor
+App ngOnInit
+App DoCheck
+App ngAfterContentInit
+App ngAfterContentChecked
+	Filter List OnChanges
+	Filter List ngOnInit
+	Filter List DoCheck
+	Todo List OnChanges
+	Todo List ngOnInit
+	Todo List DoCheck
+	Filter List ngAfterContentInit
+	Filter List ngAfterContentChecked
+	Todo List ngAfterContentInit
+	Todo List ngAfterContentChecked
+		// x 2, In Filter Comp 
+		Todo constructor 
+		// Loop Start from 1 to 2 in Filter Comp 
+		Todo 888 OnChanges
+		Todo 888 ngOnInit
+		Todo 888 DoCheck
+		Todo 888 ngAfterContentInit
+		Todo 888 ngAfterContentChecked
+		Todo 888 ngAfterViewInit
+		Todo 888 ngAfterViewChecked		
+		// Loop End from 1 to 2 in Filter Comp
+		
+		// x 5, In ToDos Comp
+		// Loop Start from 1 to 5 in ToDos Comp 
+		Todo constructor
+		Todo 1 OnChanges {todo: t}
+		Todo 1 ngOnInit
+		Todo 1 DoCheck
+		Todo 1 ngAfterContentInit
+		Todo 1 ngAfterContentChecked
+		Todo 1 ngAfterViewInit
+		Todo 1 ngAfterViewChecked
+		// Loop End from 1 to 5 in ToDos Comp
+		
+	Filter List ngAfterViewInit
+	Filter List ngAfterViewChecked
+	Todo List ngAfterViewInit
+	Todo List ngAfterViewChecked
+	
+App ngAfterViewInit
+App ngAfterViewChecked
+App DoCheck
+App ngAfterContentChecked
+	Filter List DoCheck
+	Todo List DoCheck
+	Filter List ngAfterContentChecked
+	Todo List ngAfterContentChecked
+		// Loop Start from 1 to 2 in Filter Comp 
+		Todo 888 DoCheck
+		Todo 888 ngAfterContentChecked
+		Todo 888 ngAfterViewChecked
+		// Loop End from 1 to 2 in Filter Comp
+		
+		// Loop Start from 1 to 5 in ToDos Comp
+		Todo 1 DoCheck
+		Todo 1 ngAfterContentChecked
+		Todo 1 ngAfterViewChecked
+		// Loop End from 1 to 5 in ToDos Comp
+	Filter List ngAfterViewChecked
+	Todo List ngAfterViewChecked
+App ngAfterViewChecked

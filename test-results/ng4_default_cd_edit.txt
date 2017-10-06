@@ -1,0 +1,64 @@
+// Mutate A Random Todo (Grand Child), Default Change Detection
+App DoCheck
+App ngAfterContentChecked
+	Filter List DoCheck
+	Todo List DoCheck
+	Filter List ngAfterContentChecked
+	Todo List ngAfterContentChecked
+	
+		// Loop Start from 1 to 2 in Filter Comp 
+		Todo 888 DoCheck
+		Todo 888 ngAfterContentChecked
+		Todo 888 ngAfterViewChecked
+		// Loop End from 1 to 2 in Filter Comp 
+		
+		// Loop Start from 1 to 5 in ToDos Comp 
+		Todo 1 DoCheck
+		Todo 1 ngAfterContentChecked
+		Todo 1 ngAfterViewChecked
+		// Loop End from 1 to 5 in ToDos Comp
+		
+	Filter List ngAfterViewChecked
+	Todo List ngAfterViewChecked
+App ngAfterViewChecked
+
+// Immutable A Random Todo (Grand Child) randomIndex = 1, Default Change Detection
+App DoCheck
+App ngAfterContentChecked
+	Filter List DoCheck
+	Todo List DoCheck
+	Filter List ngAfterContentChecked
+	Todo List ngAfterContentChecked
+		// Loop Start from 1 to 2 in Filter Comp 
+		Todo 888 DoCheck
+		Todo 888 ngAfterContentChecked
+		Todo 888 ngAfterViewChecked
+		// Loop End from 1 to 2 in Filter Comp 
+		
+		// Loop Start from 1 to 2 in ToDos Comp 
+		Todo 1 DoCheck
+		Todo 1 ngAfterContentChecked
+		Todo 1 ngAfterViewChecked
+		// Loop Start from 1 to 2 in ToDos Comp
+		
+		// Changed Todo Comp In ToDos Comp
+		// Start
+		Todo constructor		
+		Todo 3 OnChanges
+		Todo 3 ngOnInit
+		Todo 3 DoCheck
+		Todo 3 ngAfterContentInit
+		Todo 3 ngAfterContentChecked
+		Todo 3 ngAfterViewInit
+		Todo 3 ngAfterViewChecked
+		// End
+		
+		// Loop Start from 4 to 5 in ToDos Comp 
+		Todo 4 DoCheck
+		Todo 4 ngAfterContentChecked
+		Todo 4 ngAfterViewChecked
+		// Loop Start from 4 to 5 in ToDos Comp 
+		
+	Filter List ngAfterViewChecked
+	Todo List ngAfterViewChecked
+App ngAfterViewChecked
