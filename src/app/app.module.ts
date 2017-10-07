@@ -1,22 +1,26 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+import { DummyService } from './dummy.service';
+
 import { AppComponent } from './app.component';
-import { TodosComponent } from './todos/todos.component';
-import { FilterComponent } from './filter/filter.component';
-import { TodoComponent } from './todos/todo/todo.component';
+import { TodoListComponent } from './user/todo-list/todo-list.component';
+import { TodoComponent } from './user/todo-list/todo/todo.component';
+import { UserComponent } from './user/user.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TodosComponent,
+    TodoListComponent,
     TodoComponent,
-    FilterComponent
+    UserComponent
   ],
   imports: [
     BrowserModule
   ],
-  providers: [],
+  providers: [
+    DummyService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

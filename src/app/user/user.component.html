@@ -1,0 +1,8 @@
+<p>
+  User {{user.id}}
+</p>
+<button (click)="mutateUser()">Mutate User</button>
+<button (click)="immutateUser()">Immutate User</button>
+<button (click)="mutateRandomToDo()">Mutate Radom ToDo</button>
+<button (click)="immutateRandomToDo()">Immutate Radom ToDo</button>
+<app-todo-list [userId]="user.id" [todos]="user.todos"></app-todo-list>

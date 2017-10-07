@@ -8,8 +8,8 @@ import {
   , AfterViewInit
   , AfterViewChecked,
   SimpleChanges} from '@angular/core';
-import { Filter } from './filter.model';
-import { ToDo } from './todo.model';
+import { User } from './app.model';
+import { DummyService } from './dummy.service';
 
 @Component({
   selector: 'app-root',
@@ -24,24 +24,15 @@ export class AppComponent implements OnInit
 , AfterViewInit
 , AfterViewChecked {
   public title = 'app';
-  public todos: Array<ToDo>;
-  public filterData: Filter;
+  public users: Array<User>;
 
-  constructor() {
+  constructor(private dummyService: DummyService) {
     console.log('App constructor');
   }
 
   ngOnInit() {
-    console.log('App ngOnInit');
-    this.todos = new Array<ToDo>();
-    for (let index = 1; index <= 5; index++) {
-      this.todos.push(new ToDo(index , `To Do ${index}`, index % 2 === 0));
-    }
-    this.filterData = new Filter('search something', []);
-    this.filterData.todos = [
-      new ToDo(888, `To Do 888`, true)
-      , new ToDo(999, `To Do 999`, true)
-    ]
+    console.log('App ngOnInit');    
+    this.users = this.dummyService.getDummyUsers(3);
   }
 
   ngDoCheck() {
@@ -68,23 +59,11 @@ export class AppComponent implements OnInit
     console.log('App ngAfterViewChecked');
   }
 
-  private getRandomIndex(): number{
-    return Math.floor(Math.random() * this.todos.length);
+  mutateRandomUser() {
+    this.dummyService.mutateRandomUser(this.users);
   }
 
-  mutateRandomItem() {
-    const randomIndex = this.getRandomIndex();
-    const randomStr = `${(new Date()).getMilliseconds()}`;
-    this.todos[randomIndex].text = `${this.todos[randomIndex].text} - ${randomStr}`;
-  }
-
-  immutateRandomItem() {
-    const randomIndex = this.getRandomIndex();
-    const randomStr = `${(new Date()).getMilliseconds()}`;
-    this.todos[randomIndex] = new ToDo(
-      this.todos[randomIndex].id,
-      `${this.todos[randomIndex].text} - ${randomStr}`,
-      !this.todos[randomIndex].checked
-    );
+  immutateRandomUser() {
+    this.users = this.dummyService.immutateRandomUser(this.users);
   }
 }

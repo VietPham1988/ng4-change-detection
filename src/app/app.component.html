@@ -1,4 +1,4 @@
-<button (click)="mutateRandomItem()">Mutate Radom Item</button>
-<button (click)="immutateRandomItem()">Immutate Radom Item</button>
-<app-filter [filterData]="filterData"></app-filter>
-<app-todos [todos]="todos"></app-todos>
+<div> App </div>
+<button (click)="mutateRandomUser()">Mutate Radom User</button>
+<button (click)="immutateRandomUser()">Immutate Radom User</button>
+<app-user *ngFor="let user of users" [user]="user"></app-user>
