@@ -8,14 +8,16 @@ import {
   , AfterViewInit
   , AfterViewChecked,
   Input,
-  SimpleChanges} from '@angular/core';
+  SimpleChanges,
+  ChangeDetectionStrategy} from '@angular/core';
 import { User } from '../app.model';
 import { DummyService } from '../dummy.service';
 
 @Component({
   selector: 'app-user',
   templateUrl: './user.component.html',
-  styleUrls: ['./user.component.css']
+  styleUrls: ['./user.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class UserComponent implements OnInit
 , DoCheck

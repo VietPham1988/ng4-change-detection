@@ -8,14 +8,16 @@ import {
   , AfterViewInit
   , AfterViewChecked,
   Input,
-  SimpleChanges} from '@angular/core';
+  SimpleChanges,
+  ChangeDetectionStrategy} from '@angular/core';
 import { DummyService } from '../../../dummy.service';
 import { ToDo } from '../../../app.model';
 
 @Component({
   selector: 'app-todo',
   templateUrl: './todo.component.html',
-  styleUrls: ['./todo.component.css']
+  styleUrls: ['./todo.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class TodoComponent implements OnInit
 , DoCheck
