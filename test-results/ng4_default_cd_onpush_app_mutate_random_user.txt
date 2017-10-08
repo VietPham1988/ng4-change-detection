@@ -1,0 +1,12 @@
+App DoCheck
+App ngAfterContentChecked
+	User 1 DoCheck
+	User 1 ngAfterContentChecked
+	User 1 ngAfterViewChecked
+	User 2 DoCheck
+	User 2 ngAfterContentChecked
+	User 2 ngAfterViewChecked
+	User 3 DoCheck
+	User 3 ngAfterContentChecked
+	User 3 ngAfterViewChecked
+App ngAfterViewChecked

@@ -1,0 +1,44 @@
+App DoCheck
+App ngAfterContentChecked
+	User 1 DoCheck
+	User 1 ngAfterContentChecked
+		User 1 Todo List DoCheck
+		User 1 Todo List ngAfterContentChecked
+4			User undefined Todo constructor
+			User 1 Todo 1 OnChanges {todo: t, userId: t}
+			User 1 Todo 1 ngOnInit
+			User 1 Todo 1 DoCheck
+			User 1 Todo 1 ngAfterContentInit
+			User 1 Todo 1 ngAfterContentChecked
+			User 1 Todo 1 ngAfterViewInit
+			User 1 Todo 1 ngAfterViewChecked
+			User 1 Todo 2 OnChanges {todo: t, userId: t}
+			User 1 Todo 2 ngOnInit
+			User 1 Todo 2 DoCheck
+			User 1 Todo 2 ngAfterContentInit
+			User 1 Todo 2 ngAfterContentChecked
+			User 1 Todo 2 ngAfterViewInit
+			User 1 Todo 2 ngAfterViewChecked
+			User 1 Todo 3 OnChanges {todo: t, userId: t}
+			User 1 Todo 3 ngOnInit
+			User 1 Todo 3 DoCheck
+			User 1 Todo 3 ngAfterContentInit
+			User 1 Todo 3 ngAfterContentChecked
+			User 1 Todo 3 ngAfterViewInit
+			User 1 Todo 3 ngAfterViewChecked
+			User 1 Todo 4 OnChanges {todo: t, userId: t}
+			User 1 Todo 4 ngOnInit
+			User 1 Todo 4 DoCheck
+			User 1 Todo 4 ngAfterContentInit
+			User 1 Todo 4 ngAfterContentChecked
+			User 1 Todo 4 ngAfterViewInit
+			User 1 Todo 4 ngAfterViewChecked
+		User 1 Todo List ngAfterViewChecked
+	User 1 ngAfterViewChecked
+	User 2 DoCheck
+	User 2 ngAfterContentChecked
+	User 2 ngAfterViewChecked
+	User 3 DoCheck
+	User 3 ngAfterContentChecked
+	User 3 ngAfterViewChecked
+App ngAfterViewChecked
