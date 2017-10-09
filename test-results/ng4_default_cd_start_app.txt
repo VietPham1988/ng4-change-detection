@@ -93,6 +93,8 @@ App ngAfterContentChecked
 	User 3 ngAfterViewInit
 	User 3 ngAfterViewChecked
 App ngAfterViewInit
+// Default, start app
+
 App ngAfterViewChecked
 App DoCheck
 App ngAfterContentChecked

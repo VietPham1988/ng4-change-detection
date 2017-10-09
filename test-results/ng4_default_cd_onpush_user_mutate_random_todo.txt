@@ -1,3 +1,5 @@
+// OnPush - In User Component, Mutate a random ToDo
+
 App DoCheck
 App ngAfterContentChecked
 	User 1 DoCheck

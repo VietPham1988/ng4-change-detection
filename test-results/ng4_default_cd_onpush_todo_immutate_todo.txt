@@ -1,21 +1,16 @@
+// OnPush - In ToDo Component, Immutate itself
+
 App DoCheck
 App ngAfterContentChecked
 	User 1 DoCheck
 	User 1 ngAfterContentChecked
 		User 1 Todo List DoCheck
 		User 1 Todo List ngAfterContentChecked
+			// Start Loop From 'ToDo 1' to 'ToDo 4'
 			User 1 Todo 1 DoCheck
 			User 1 Todo 1 ngAfterContentChecked
 			User 1 Todo 1 ngAfterViewChecked
-			User 1 Todo 2 DoCheck
-			User 1 Todo 2 ngAfterContentChecked
-			User 1 Todo 2 ngAfterViewChecked
-			User 1 Todo 3 DoCheck
-			User 1 Todo 3 ngAfterContentChecked
-			User 1 Todo 3 ngAfterViewChecked
-			User 1 Todo 4 DoCheck
-			User 1 Todo 4 ngAfterContentChecked
-			User 1 Todo 4 ngAfterViewChecked
+			// End
 		User 1 Todo List ngAfterViewChecked
 	User 1 ngAfterViewChecked
 	User 2 DoCheck

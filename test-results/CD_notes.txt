@@ -1,0 +1,44 @@
+- View states: FirstCheck, ChecksEnabled, Errored, Destroyed & ...
+- Change detection is skipped for the view and its child views:
+	> ChecksEnabled = false 
+	> OR View State = Errored  || Destroyed
+
+- By default, all Views are initialized with ChecksEnabled unless ChangeDetectionStrategy.OnPush is used
+
+- ChangeDetectionStrategy.Default:
+	> The Input reference changes.
+	> An event occurred from the component or one of his children or its PARENT components.
+	> Calling detectChanges()/tick()/markForCheck()
+	> if an observable linked to the template via the async pipe emits a new value !?
+	
+- ChangeDetectionStrategy.OnPush:
+	> The Input reference changes.
+	> An event occurred from the component or one of his children. (ONLY ANGULAR EVENTS)
+	> Calling detectChanges()/tick()/markForCheck()
+	> if an observable linked to the template via the async pipe emits a new value !?
+
+- Use detectChanges() when you've updated the model after angular has run it's change detection, or if the update hasn't been in angular world at all.
+-> current component > all descendant components
+- Use markForCheck() if you're using OnPush and you're bypassing the ChangeDetectionStrategy by mutating some data or you've updated the model inside a setTimeout;
+-> current component > root component
+
+- By default, Angular Change Detection works by checking if the value of template expressions have changed. 
+	This is done for all components.
+- By default, Angular does not do deep object comparison to detect changes,
+	it only takes into account properties used by the template
+
+A: AfterContentInit
+A: AfterContentChecked
+A: Update bindings
+    B: AfterContentInit
+    B: AfterContentChecked
+    B: Update bindings
+        C: AfterContentInit
+        C: AfterContentChecked
+        C: Update bindings
+        C: AfterViewInit
+        C: AfterViewChecked
+    B: AfterViewInit
+    B: AfterViewChecked
+A: AfterViewInit
+A: AfterViewChecked
