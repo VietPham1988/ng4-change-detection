@@ -1,23 +1,19 @@
 import { Injectable } from '@angular/core';
 import * as _ from 'lodash';
 import { User, ToDo } from './app.model';
-import { Subject } from 'rxjs/Subject';
 
 @Injectable()
 export class DummyService {
-  public users: Subject<Array<User>> = new Subject<Array<User>>();
+  constructor(){}
 
-  constructor() {}
+  public getDummyUsers(count: number): Array<User> {
+    const users = new Array<User>();
 
-  public getDummyUsers(count: number): Array<User>{
-    let users = new Array<User>();
-
-    for(let i =1; i <= count; i++){
+    for (let i = 1; i <= count; i++) {
       users.push(
         new User(
           i
           , `User ${i}`
-          , this.getDummyToDos(count+1)
         )
       );
     }
@@ -25,11 +21,11 @@ export class DummyService {
   }
 
   public getDummyToDos(count: number): Array<ToDo>{
-    let todos = new Array<ToDo>();
+    const todos = new Array<ToDo>();
 
-    for(let i =1; i <= count; i++){
+    for (let i = 1; i <= count; i++) {
       todos.push(
-        new ToDo(i, `ToDo ${i}`, i%2==0)
+        new ToDo(i, `ToDo ${i}`, i % 2 === 0)
       );
     }
     return todos;
@@ -51,30 +47,30 @@ export class DummyService {
     this.updateRandomToDoByRandomValue(todos);
   }
 
-  public immutateUser(user: User): User{
-    let newUser = new User(user.id, user.name, this.createNewToDoArray(user.todos));
+  public immutateUser(user: User): User {
+    const newUser = new User(user.id, user.name);
     newUser.name = this.addRandomSuffix(user.name);
     return newUser;
   }
 
   public immutateRandomUser(users: Array<User>): Array<User>{
-    let newUsers = this.createNewUserArray(users);
+    const newUsers = this.createNewUserArray(users);
     this.updateRandomUserByRandomValue(newUsers);
     return newUsers;
   }
 
   public immutateToDo(todo: ToDo): ToDo{
-    let newToDo = new ToDo(todo.id, todo.text, todo.checked);
+    const newToDo = new ToDo(todo.id, todo.text, todo.checked);
     newToDo.text = this.addRandomSuffix(newToDo.text);
     return newToDo;
   }
 
-  public immutateRandomToDo(todos: Array<ToDo>): Array<ToDo>{
+  public immutateRandomToDo(todos: Array<ToDo>): Array<ToDo> {
     this.updateRandomToDoByRandomValue(todos);
     return this.createNewToDoArray(todos);
   }
 
-  private getRandomIndex(maxValue: number): number{
+  private getRandomIndex(maxValue: number): number {
     return Math.floor(Math.random() * maxValue);
   }
 
@@ -82,16 +78,16 @@ export class DummyService {
     return `${value} - ${(new Date()).getMilliseconds()}`;
   }
 
-  private updateRandomUserByRandomValue(users: Array<User>): Array<User>{
+  private updateRandomUserByRandomValue(users: Array<User>): Array<User> {
     const randonIndex = this.getRandomIndex(users.length);
-    let randomUser = users[randonIndex];
+    const randomUser = users[randonIndex];
     randomUser.name = this.addRandomSuffix(randomUser.name);
     return users;
   }
 
-  private updateRandomToDoByRandomValue(todos: Array<ToDo>): Array<ToDo>{
+  private updateRandomToDoByRandomValue(todos: Array<ToDo>): Array<ToDo> {
     const randonIndex = this.getRandomIndex(todos.length);
-    let randomToDo = todos[randonIndex];
+    const randomToDo = todos[randonIndex];
     randomToDo.text = this.addRandomSuffix(randomToDo.text);
     return todos;
   }
@@ -101,8 +97,7 @@ export class DummyService {
       return new User(
         u.id
         , u.name
-        , this.createNewToDoArray(u.todos)
-      )
+      );
     });
   }
 
@@ -112,7 +107,7 @@ export class DummyService {
         t.id
         , t.text
         , t.checked
-      )
+      );
     });
   }
 }
