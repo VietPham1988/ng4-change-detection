@@ -1,12 +1,18 @@
 import { Injectable } from '@angular/core';
 import * as _ from 'lodash';
 import { User, ToDo } from './app.model';
+import { Subject } from 'rxjs/Subject';
 
 @Injectable()
 export class DummyService {
-  constructor(){}
+  private users: User[];
+  private todos: ToDo[];
 
-  public getDummyUsers(count: number): Array<User> {
+  public users$ = new Subject<User[]>();
+  public todos$ = new Subject<ToDo[]>();
+  constructor() {}
+
+  private createDummyUsers(count: number): Array<User> {
     const users = new Array<User>();
 
     for (let i = 1; i <= count; i++) {
@@ -20,7 +26,7 @@ export class DummyService {
     return users;
   }
 
-  public getDummyToDos(count: number): Array<ToDo>{
+  private createDummyToDos(count: number): Array<ToDo> {
     const todos = new Array<ToDo>();
 
     for (let i = 1; i <= count; i++) {
@@ -31,19 +37,27 @@ export class DummyService {
     return todos;
   }
 
-  public mutateUser(user: User): void{
+  public getDummyUsers(count: number) {
+    this.users$.next(this.createDummyUsers(count));
+  }
+
+  public getDummyToDos(count: number) {
+    this.todos$.next(this.createDummyToDos(count));
+  }
+
+  public mutateUser(user: User): void {
     user.name = this.addRandomSuffix(user.name);
   }
 
-  public mutateRandomUser(users: Array<User>): void{
+  public mutateRandomUser(users: Array<User>): void {
     this.updateRandomUserByRandomValue(users);
   }
 
-  public mutateToDo(todo: ToDo): void{
+  public mutateToDo(todo: ToDo): void {
     todo.text = this.addRandomSuffix(todo.text);
   }
 
-  public mutateRandomToDo(todos: Array<ToDo>): void{
+  public mutateRandomToDo(todos: Array<ToDo>): void {
     this.updateRandomToDoByRandomValue(todos);
   }
 
