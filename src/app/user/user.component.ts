@@ -10,7 +10,7 @@ import {
   Input,
   SimpleChanges,
   ChangeDetectionStrategy} from '@angular/core';
-import { User } from '../app.model';
+import { User, ToDo } from '../app.model';
 import { DummyService } from '../dummy.service';
 
 @Component({
@@ -27,6 +27,7 @@ export class UserComponent implements OnInit
 , AfterViewInit
 , AfterViewChecked {
   @Input() user: User;
+  public todos: ToDo[];
 
   constructor(private dummyService: DummyService) {
     console.log(`-User constructor`);
@@ -34,6 +35,7 @@ export class UserComponent implements OnInit
 
   ngOnInit() {
     console.log(`-User ${this.user.id} ngOnInit`);
+    this.todos = this.dummyService.getDummyToDos(4);
   }
 
   ngDoCheck() {
@@ -67,13 +69,13 @@ export class UserComponent implements OnInit
   immutateUser() {
     this.user = this.dummyService.immutateUser(this.user);
   }
-  
+
   mutateRandomToDo() {
-    this.dummyService.mutateRandomToDo(this.user.todos);
+    this.dummyService.mutateRandomToDo(this.todos);
   }
 
   immutateRandomToDo() {
-    this.user.todos = this.dummyService.immutateRandomToDo(this.user.todos);
+    this.todos = this.dummyService.immutateRandomToDo(this.todos);
   }
 
 }

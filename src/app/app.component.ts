@@ -31,7 +31,7 @@ export class AppComponent implements OnInit
   }
 
   ngOnInit() {
-    console.log('App ngOnInit');    
+    console.log('App ngOnInit');
     this.users = this.dummyService.getDummyUsers(3);
   }
 
