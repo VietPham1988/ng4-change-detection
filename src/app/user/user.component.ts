@@ -69,11 +69,11 @@ export class UserComponent implements OnInit
   }
 
   mutateRandomToDo() {
-    this.dummyService.mutateRandomToDo(this.user.todos);
+    this.dummyService.mutateRandomToDo(this.todos);
   }
 
   immutateRandomToDo() {
-    this.user.todos = this.dummyService.immutateRandomToDo(this.user.todos);
+    this.todos = this.dummyService.immutateRandomToDo(this.todos);
   }
 
 }
