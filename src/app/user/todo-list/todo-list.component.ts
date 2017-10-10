@@ -58,7 +58,7 @@ export class TodoListComponent implements OnInit
   ngAfterViewChecked() {
     console.log(`--User ${this.userId} Todo List ngAfterViewChecked`);
   }
-  
+
   mutateRandomToDo() {
     this.dummyService.mutateRandomToDo(this.todos);
   }
