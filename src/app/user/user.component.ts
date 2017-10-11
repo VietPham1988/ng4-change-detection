@@ -70,7 +70,7 @@ export class UserComponent implements OnInit
   }
 
   immutateRandomToDo() {
-    this.dummyService.immutateRandomToDo();
+    this.dummyService.immutateRandomToDo(this.user.id);
   }
 
 }

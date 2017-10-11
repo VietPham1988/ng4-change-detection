@@ -76,14 +76,13 @@ export class DummyService {
     this.todos$.next(user.todos);
   }
 
-  public immutateRandomToDo(): void {
-    const randomUserIndex = this.getRandomIndex(this.userTotalCount);
+  public immutateRandomToDo(userId: number): void {
     const randomToDoIndex = this.getRandomIndex(this.todoTotalCount);
-    const randomTodo = this.users[randomUserIndex].todos[randomToDoIndex];
+    const randomTodo = this.users[userId].todos[randomToDoIndex];
     const newTodo = new ToDo(randomTodo.id, randomTodo.text, randomTodo.userId);
     newTodo.text = this.addRandomSuffix(newTodo.text);
-    this.users[randomUserIndex].todos[randomToDoIndex] = newTodo;
-    this.todos$.next(this.users[randomUserIndex].todos);
+    this.users[userId].todos[randomToDoIndex] = newTodo;
+    this.todos$.next(this.users[userId].todos);
   }
 
   private getRandomIndex(maxValue: number): number {
