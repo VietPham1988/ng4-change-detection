@@ -5,12 +5,15 @@ import { Subject } from 'rxjs/Subject';
 
 @Injectable()
 export class DummyService {
-  private users: User[];
-  private todos: ToDo[];
+  private users = new Array<User>();
+  private userTotalCount = 3;
+  private todoTotalCount = 4;
 
   public users$ = new Subject<User[]>();
   public todos$ = new Subject<ToDo[]>();
-  constructor() {}
+  constructor() {
+    this.users = this.createDummyUsers(this.userTotalCount);
+  }
 
   private createDummyUsers(count: number): Array<User> {
     const users = new Array<User>();
@@ -20,68 +23,67 @@ export class DummyService {
         new User(
           i
           , `User ${i}`
+          , this.createDummyToDos(i, this.todoTotalCount)
         )
       );
     }
     return users;
   }
 
-  private createDummyToDos(count: number): Array<ToDo> {
+  private createDummyToDos(userId: number, count: number): Array<ToDo> {
     const todos = new Array<ToDo>();
 
     for (let i = 1; i <= count; i++) {
       todos.push(
-        new ToDo(i, `ToDo ${i}`, i % 2 === 0)
+        new ToDo(i, `ToDo ${i}`, userId)
       );
     }
     return todos;
   }
 
-  public getDummyUsers(count: number) {
-    this.users$.next(this.createDummyUsers(count));
+  public getDummyUsers() {
+    this.users$.next(this.users);
   }
 
-  public getDummyToDos(count: number) {
-    this.todos$.next(this.createDummyToDos(count));
+  public getDummyToDos(userId: number) {
+    const user = this.users.find(u => u.id === userId);
+    this.todos$.next(user.todos);
   }
 
-  public mutateUser(user: User): void {
-    user.name = this.addRandomSuffix(user.name);
-  }
-
-  public mutateRandomUser(users: Array<User>): void {
-    this.updateRandomUserByRandomValue(users);
-  }
-
-  public mutateToDo(todo: ToDo): void {
-    todo.text = this.addRandomSuffix(todo.text);
-  }
-
-  public mutateRandomToDo(todos: Array<ToDo>): void {
-    this.updateRandomToDoByRandomValue(todos);
-  }
-
-  public immutateUser(user: User): User {
-    const newUser = new User(user.id, user.name);
+  public immutateUser(user: User): void {
+    const userIndex = this.users.indexOf(user);
+    const newUser = new User(user.id, user.name, user.todos);
     newUser.name = this.addRandomSuffix(user.name);
-    return newUser;
+    this.users[userIndex] = newUser;
+    this.users$.next(this.users);
   }
 
-  public immutateRandomUser(users: Array<User>): Array<User>{
-    const newUsers = this.createNewUserArray(users);
-    this.updateRandomUserByRandomValue(newUsers);
-    return newUsers;
+  public immutateRandomUser(): void {
+    const randomUserIndex = this.getRandomIndex(this.users.length);
+    const randomUser = this.users[randomUserIndex];
+    const newUser = new User(randomUser.id, randomUser.name, randomUser.todos);
+    newUser.name = this.addRandomSuffix(randomUser.name);
+    this.users[randomUserIndex] = newUser;
+    this.users$.next(this.users);
   }
 
-  public immutateToDo(todo: ToDo): ToDo{
-    const newToDo = new ToDo(todo.id, todo.text, todo.checked);
-    newToDo.text = this.addRandomSuffix(newToDo.text);
-    return newToDo;
+  public immutateToDo(todo: ToDo): void {
+    const user = this.users.find(u => u.id === todo.userId);
+    const todoIndex = user.todos.indexOf(todo);
+    const newTodo = new ToDo(todo.id, todo.text, todo.userId);
+    newTodo.text = this.addRandomSuffix(newTodo.text);
+    user.todos[todoIndex] = newTodo;
+    this.todos$.next(user.todos);
   }
 
-  public immutateRandomToDo(todos: Array<ToDo>): Array<ToDo> {
-    this.updateRandomToDoByRandomValue(todos);
-    return this.createNewToDoArray(todos);
+  public immutateRandomToDo(): void {
+    const randomUserIndex = this.getRandomIndex(this.userTotalCount);
+    const randomToDoIndex = this.getRandomIndex(this.todoTotalCount);
+    const randomTodo = this.users[randomUserIndex].todos[randomToDoIndex];
+    const newTodo = new ToDo(randomTodo.id, randomTodo.text, randomTodo.userId);
+    newTodo.text = this.addRandomSuffix(newTodo.text);
+    this.users[randomUserIndex].todos[randomToDoIndex] = newTodo;
+    this.todos$.next(this.users[randomUserIndex].todos);
   }
 
   private getRandomIndex(maxValue: number): number {
@@ -104,24 +106,5 @@ export class DummyService {
     const randomToDo = todos[randonIndex];
     randomToDo.text = this.addRandomSuffix(randomToDo.text);
     return todos;
-  }
-
-  private createNewUserArray(users: Array<User>): Array<User>{
-    return users.map(u => {
-      return new User(
-        u.id
-        , u.name
-      );
-    });
-  }
-
-  private createNewToDoArray(todos: Array<ToDo>): Array<ToDo>{
-    return todos.map(t => {
-      return new ToDo(
-        t.id
-        , t.text
-        , t.checked
-      );
-    });
   }
 }

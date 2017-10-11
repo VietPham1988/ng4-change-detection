@@ -32,7 +32,8 @@ export class AppComponent implements OnInit
 
   ngOnInit() {
     console.log('App ngOnInit');
-    this.users = this.dummyService.getDummyUsers(3);
+    this.dummyService.users$.subscribe( users => this.users = users);
+    this.dummyService.getDummyUsers();
   }
 
   ngDoCheck() {
@@ -59,11 +60,7 @@ export class AppComponent implements OnInit
     console.log('App ngAfterViewChecked');
   }
 
-  mutateRandomUser() {
-    this.dummyService.mutateRandomUser(this.users);
-  }
-
   immutateRandomUser() {
-    this.users = this.dummyService.immutateRandomUser(this.users);
+    this.dummyService.immutateRandomUser();
   }
 }

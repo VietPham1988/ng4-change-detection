@@ -59,11 +59,7 @@ export class TodoListComponent implements OnInit
     console.log(`--User ${this.userId} Todo List ngAfterViewChecked`);
   }
 
-  mutateRandomToDo() {
-    this.dummyService.mutateRandomToDo(this.todos);
-  }
-
   immutateRandomToDo() {
-    this.todos = this.dummyService.immutateRandomToDo(this.todos);
+    this.dummyService.immutateRandomToDo();
   }
 }

@@ -59,12 +59,8 @@ export class TodoComponent implements OnInit
     console.log(`---User ${this.userId} Todo ${this.todo.id} ngAfterViewChecked`);
   }
 
-  mutate() {
-    this.dummyService.mutateToDo(this.todo);
-  }
-
   immutate() {
-    this.todo = this.dummyService.immutateToDo(this.todo);
+    this.dummyService.immutateToDo(this.todo);
   }
 
 }

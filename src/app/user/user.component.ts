@@ -33,7 +33,12 @@ export class UserComponent implements OnInit
 
   ngOnInit() {
     console.log(`-User ${this.user.id} ngOnInit`);
-    this.todos = this.dummyService.getDummyToDos(4);
+    this.dummyService.todos$.subscribe( todos => {
+      if (todos[0].userId === this.user.id) {
+        this.todos = todos;
+      }
+    });
+    this.dummyService.getDummyToDos(this.user.id);
   }
 
   ngDoCheck() {
@@ -60,20 +65,12 @@ export class UserComponent implements OnInit
     console.log(`-User ${this.user.id} ngAfterViewChecked`);
   }
 
-  mutateUser() {
-    this.dummyService.mutateUser(this.user);
-  }
-
   immutateUser() {
-    this.user = this.dummyService.immutateUser(this.user);
-  }
-
-  mutateRandomToDo() {
-    this.dummyService.mutateRandomToDo(this.todos);
+    this.dummyService.immutateUser(this.user);
   }
 
   immutateRandomToDo() {
-    this.todos = this.dummyService.immutateRandomToDo(this.todos);
+    this.dummyService.immutateRandomToDo();
   }
 
 }

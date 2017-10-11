@@ -1,4 +1,3 @@
 <div> > User {{ userId }} > ToDoList</div>
-<button (click)="mutateRandomToDo()">Mutate Radom ToDo</button>
 <button (click)="immutateRandomToDo()">Immutate Radom ToDo</button>
 <app-todo *ngFor="let todo of todos" [todo]="todo" [userId]="userId"></app-todo>
