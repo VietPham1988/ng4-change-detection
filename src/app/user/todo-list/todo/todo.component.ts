@@ -6,9 +6,9 @@ import {
   , AfterContentInit
   , AfterContentChecked
   , AfterViewInit
-  , AfterViewChecked
-  , Input
-  , SimpleChanges} from '@angular/core';
+  , AfterViewChecked,
+  Input,
+  SimpleChanges} from '@angular/core';
 import { DummyService } from '../../../dummy.service';
 import { ToDo } from '../../../app.model';
 

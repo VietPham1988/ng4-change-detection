@@ -7,15 +7,13 @@ import { AppComponent } from './app.component';
 import { TodoListComponent } from './user/todo-list/todo-list.component';
 import { TodoComponent } from './user/todo-list/todo/todo.component';
 import { UserComponent } from './user/user.component';
-import { TodoTextComponent } from './user/todo-list/todo/todo-text/todo-text.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TodoListComponent,
     TodoComponent,
-    UserComponent,
-    TodoTextComponent
+    UserComponent
   ],
   imports: [
     BrowserModule
