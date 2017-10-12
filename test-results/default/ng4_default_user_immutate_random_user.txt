@@ -2,7 +2,7 @@ App DoCheck
 App ngAfterContentChecked
 	User 1 DoCheck
 	User 1 ngAfterContentChecked
-		User 1 Todo List OnChanges {todos: t}
+		User 1 Todo OnChanges {todos: t}
 		User 1 Todo List DoCheck
 		User 1 Todo List ngAfterContentChecked			
 			// Start Loop From 'ToDo 1' to 'ToDo 4'

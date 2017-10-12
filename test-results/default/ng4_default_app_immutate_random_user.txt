@@ -11,7 +11,7 @@ App ngAfterContentChecked
 	User 1 DoCheck
 	User 1 ngAfterContentInit
 	User 1 ngAfterContentChecked
-		User 1 Todo List OnChanges {todos: t, userId: t}
+		User 1 Todo OnChanges {todos: t, userId: t}
 		User 1 Todo List ngOnInit
 		User 1 Todo List DoCheck
 		User 1 Todo List ngAfterContentInit
@@ -38,7 +38,7 @@ App ngAfterContentChecked
 	User 2 DoCheck
 	User 2 ngAfterContentInit
 	User 2 ngAfterContentChecked
-		User 2 Todo List OnChanges {todos: t, userId: t}
+		User 2 Todo OnChanges {todos: t, userId: t}
 		User 2 Todo List ngOnInit
 		User 2 Todo List DoCheck
 		User 2 Todo List ngAfterContentInit
@@ -65,7 +65,7 @@ App ngAfterContentChecked
 	User 3 DoCheck
 	User 3 ngAfterContentInit
 	User 3 ngAfterContentChecked
-		User 3 Todo List OnChanges {todos: t, userId: t}
+		User 3 Todo OnChanges {todos: t, userId: t}
 		User 3 Todo List ngOnInit
 		User 3 Todo List DoCheck
 		User 3 Todo List ngAfterContentInit
