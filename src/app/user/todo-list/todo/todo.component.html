@@ -1,3 +1,4 @@
-<div> >> ToDo: {{todo.id}} - {{todo.text}}</div>
+<!-- <div> >> ToDo: {{todo.id}} - {{todo.text}}</div> -->
+<app-todo-text [todoText]="todo.text"></app-todo-text>
 <button (click)="mutate()">Mutate</button>
 <button (click)="immutate()">Immutate</button>
