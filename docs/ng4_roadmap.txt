@@ -1,0 +1,108 @@
+Angular 2.0
+
+    Lesson 01 - What is a SPA? What is Angular?
+        1.1 Single Page Apps vs Conventional Web Applications
+        1.2 Where Angular Fits
+        1.3 Angular-4 is arrived (what’s new)
+    Lesson 02 - Preparing for TypeScript
+        2.1 Brief Intro to TypeScript
+        2.3 The TypeScript Module System
+        2.3 Getting Setup
+        2.4 Project Setup
+        2.5 Nodemon
+        2.6 String Templates
+        2.7 Const
+        2.8 Let
+        2.9 Debugging
+        2.10 Rest & Spread Operators
+        2.11 Arrow Functions
+        2.12 For...of
+        2.13 Maps
+        2.14 Sets
+        2.15 Interface
+        2.16 Generics
+        2.17 New Object Features
+        2.18 Classes
+        2.19 Destructuring
+        2.20 TypeScript decorators
+    Lesson 03 - Building with A2 Components
+        3.1 A Trivial Component
+        3.2 Nested Components
+        3.3 Deeper Nesting
+    Lessson 04 - Bootstrap Scaffolding
+        4.1 What Is Bootstrap?
+        4.2 Bootstrap File Structure
+        4.3 Basic HTML Template
+        4.4 Global Styles
+        4.5 Default Grid System
+        4.6 Fluid Grid System
+        4.7 Bootstrap CSS
+        4.8 Typography
+        4.9 Code
+        4.10 Tables
+        4.11 Forms
+        4.12 Buttons
+        4.13 Images
+        4.14 Icons
+    Lesson 05 - Angular 2 Binding and Events
+        5.1 Templates
+        5.2 Bindings
+        5.3 Event Bindings
+        5.4 Two-way Binding
+        5.5 Class and Style Bindings
+        5.6 Built-in Directives
+        5.7 Component Data Binding
+        5.8 Component Events
+        5.9 Ng-model
+        5.10 Introduction to webpack/systemJS
+    Lesson 06 - Dependency Injection and services
+        6.1 Why Dependency Injection?
+        6.2 Injection API
+        6.3 Component Multi Providers
+        6.4 Injection Multi Providers
+        6.5 Services Overview
+        6.6 Creating a Service
+        6.7 Injecting a Service
+    Lesson 07 - Directives
+        7.1 Introduction and Examples
+        7.2 Directives Overview
+        7.3 Attribute Directives
+        7.4 Custom Attribute Directive
+        7.5 Structural Directives
+        7.6 Structural Directive: ngIf
+        7.7 Structural Directive: ngFor
+        7.8 Structural Directive: ngSwitch
+        7.9 Custom Structural Directive
+    Lesson 08 - Pipes
+        8.1 Using Pipes
+        8.2 Creating Pipes
+        8.3 Built-in Pipes
+        8.4 Chaining Pipes
+        8.5 Custom Pipes
+        8.6 Stateful Pipes
+    Lesson 09 - Forms
+        9.1 Controls
+        9.2 Control groups
+        9.3 FormBuilder
+        9.4 Template Driven Approach
+        9.5 Data Driven Approach
+    Lesson 10 - Routing
+        10.1 Introduction and Use
+        10.2 Creating and configuring Routes
+        10.3 Imperative Routing
+        10.4 Routing Parameters
+        10.5 Child Routes
+        10.6 Routing Lifecycle Hooks
+        10.7 Setting up Firebase
+        10.8 HTTP POST Request
+        10.9 HTTP GET Request
+    Lesson 11 - HTTP, Promises, and Observables
+        11.1 Promises - still available, still useful
+        11.2 Calling an API via HTTP
+        11.3 Introduction to Observables
+        11.4 Observable Bindings
+        11.5 Observables Operators
+    lesson 12 - Testing
+        12.1 Unit Testing
+        12.2 End to End Testing
+    Lesson 13 - Angular-4 new features (Add-on)
